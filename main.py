@@ -23,3 +23,6 @@ def states():
 def districts():
    return render_template('districts.html', result =[daily_report,statewise,districtData])
 
+@app.route('/about')
+def about():
+   return render_template('about.html', result =[daily_report,statewise,districtData])
