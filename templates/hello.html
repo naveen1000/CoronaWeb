@@ -1,0 +1,25 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    </head>
+   <body>
+
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="states">States</a>
+        <a href="districts">Districts</a>
+        <a href="#about">About</a>
+    </div>
+    <table border = 1>
+        {% for key, value in result[0].items() %}
+        <tr>
+           <th> {{ key }} </th>
+           <td> {{ value }} </td>
+        </tr>
+     {% endfor %}       
+
+     </table>
+    
+   </body>
+</html>

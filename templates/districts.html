@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href="{{ url_for('static', filename = 'style.css') }}">
+    </head>
+   <body>
+
+    <div class="topnav">
+        <a href="/">Home</a>
+        <a href="states">States</a>
+        <a class="active" href="districts">Districts</a>
+        <a href="#about">About</a>
+    </div>
+     
+
+   <table border = 1>
+    {% for key, value in result[2].items() %}
+    <tr>
+       <th> {{ key }} </th>
+       <td> 
+            {{value['confirmed']}}
+        </td>
+    </tr>
+ {% endfor %}       
+
+ </table>
+
+</body>
+</html>
