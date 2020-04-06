@@ -6,6 +6,15 @@ raw = requests.get('https://api.covid19india.org/data.json')
 data = raw.json()
 daily_report = data['cases_time_series'][-1]
 statewise = data['statewise']
+msg=[]
+for i in statewise:
+	active = i['active']
+	confirmed = i['confirmed']
+	deaths = i['deaths']
+	recovered = i['recovered']
+	state = i['state']
+	#lastupdatedtime = i['lastupdatedtime']
+	msg.append([confirmed, deaths, recovered,active, state[0:14]])
 
 raw = requests.get('https://api.covid19india.org/state_district_wise.json')
 data = raw.json()
@@ -17,7 +26,7 @@ def hello_name():
 
 @app.route('/states')
 def states():
-   return render_template('states.html', result =[daily_report,statewise,districtData])
+   return render_template('states.html', result =[daily_report,msg,districtData])
 
 @app.route('/districts')
 def districts():

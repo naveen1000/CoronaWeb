@@ -13,16 +13,30 @@
     </div>
 
     <h1 style="color: chartreuse;">Corona Updates</h1>
-    <p>Get Details of corona cases in India both State Wise and District Wise Using the Navigation Bar</p>
+    <p>Get Details of corona cases in India both <a href="states">States</a> Wise and <a href="districts">Districts</a> Wise Using the Navigation Bar  or Click on highlighted text</p>
+    
+    <h3>Today's Real Time Data</h3>
+     
+     <table border = 1>
+        {% for i in result[1][0] %}
+        <tr>
+           <th> {{ i.capitalize() }} </th>
+           <td> {{ result[1][0][i] }} </td>
+        </tr>
+     {% endfor %}       
+    </table>
+     <h3>Yesterday Final Data</h3>
     <table border = 1>
         {% for key, value in result[0].items() %}
         <tr>
-           <th> {{ key }} </th>
+           <th> {{ key.capitalize().replace('deceased',"dead").replace('Daily',"Yesterday") }} </th>
            <td> {{ value }} </td>
         </tr>
      {% endfor %}       
+    </table>
 
-     </table>
-    
+     <p>For Detailed report of <a href="states">States</a> and <a href="districts">Districts</a> use navigation bar</p> or Click on highlighted text
+ 
+     
    </body>
 </html>
