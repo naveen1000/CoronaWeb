@@ -1,5 +1,5 @@
 # CoronaWeb
-This Project is developed using Python Flask and deployed in Heroku Cloud Platform.
+This Project is developed using Python Flask and deployed in Heroku Cloud Platform.</br>
 Live At:-http://corona-notify.herokuapp.com/
 
 This websites shows total corona cases confirmed in India and also with in states.
